@@ -17,8 +17,12 @@ app.use((req, res, next) => {
 });
 
 app.get("/meals", async (req, res) => {
-  const meals = "[]" // data should be read from file
-  res.json(JSON.parse(meals));
+  try {const meals = await fs.readFile("./data/meals.json", "utf-8"); // data should be read from file
+    res.json(JSON.parse(meals));
+  } catch (err) {
+    console.error("Error reading meals.json:", err.message);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 app.use((req, res) => {
@@ -29,4 +33,6 @@ app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });
 
-app.listen(3001);
+app.listen(3001, () => 
+{ console.log("server is connected")}
+);
