@@ -1,4 +1,6 @@
 import logo from '../assets/logo.jpg'
+import React from "react"
+import "../index.css"
 
 const Header = () => {
     return (
@@ -14,4 +16,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;
