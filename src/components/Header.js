@@ -7,15 +7,20 @@ import CartContext from "../store/CartContext";
 const Header = () => {
   const cartCtx = useContext(CartContext);
 
+  const totalItems = cartCtx.items.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <header id="main-header">
       <div id="title">
-        <img src={logo} alt="Logo" />
+        <img src={logo} />
         <h1>React Food Order App</h1>
       </div>
       <nav>
         <Button textOnly>
-          Cart ({cartCtx.items.length})
+          Cart ({totalItems})
         </Button>
       </nav>
     </header>
