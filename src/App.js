@@ -9,10 +9,12 @@ const App = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const openCartHandler = () => {
+    console.log("Opening cart..."); // Debugging
     setIsCartOpen(true);
   };
 
   const closeCartHandler = () => {
+    console.log("Closing cart..."); // Debugging
     setIsCartOpen(false);
   };
 

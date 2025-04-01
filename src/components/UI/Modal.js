@@ -8,6 +8,8 @@ const Modal = ({ open, onClose, children }) => {
   
     useEffect(() => {
         const dialogEl = dialog.current;
+        console.log("Modal open state:", open); // Debugging
+        console.log("Dialog element:", dialogEl); // Debugging
       
         if (open) {
           dialogEl?.showModal();
