@@ -1,10 +1,12 @@
 import "../../src/index.css"
+import Button from "./UI/Button";
+
 
 const MealItem = ({ meal }) => {
     return (
       <li className="meal-item">
         <article>
-        <img src={`/${meal.image}`} alt={meal.name} />
+        <img src={`${meal.image}`} alt={meal.name} />
           <div>
             <h3>{meal.name}</h3>
             <p className="meal-item-price">
@@ -16,7 +18,7 @@ const MealItem = ({ meal }) => {
             <p className="meal-item-description">{meal.description}</p>
           </div>
           <div className="meal-item-actions">
-            <button className="button">Add to Cart</button>
+          <Button textOnly onClick={() => console.log("Cart button pressed")}>Add to Cart</Button>
           </div>
         </article>
       </li>
