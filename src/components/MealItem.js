@@ -12,7 +12,7 @@ const MealItem = ({ meal }) => {
   return (
     <li className="meal-item">
       <article>
-        <img src={`/${meal.image}`} alt={meal.name} />
+        <img src={require(`../assets/${meal.image}`).default} alt={meal.name} />
         <div>
           <h3>{meal.name}</h3>
           <p className="meal-item-price">
