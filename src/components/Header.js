@@ -15,7 +15,7 @@ const Header = ({ onCartClick }) => {
   return (
     <header id="main-header">
       <div id="title">
-        <img src={logo} />
+        <img src={logo} alt="React Food Order App Logo" />
         <h1>React Food Order App</h1>
       </div>
       <nav>
